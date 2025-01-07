@@ -55,10 +55,14 @@ create = (number, color) => {
     return group;
 }
 
-yellow = create(1000, "yellow");
-
+yellow = create(200, "yellow");
+red = create(200, "red");
+//green = create(200, "green");
 update = () => {
-    rule(yellow, yellow, 1);
+  //rule(green, green, -0.32);
+  rule(red, red, -0.1);
+  rule(red, yellow, -0.01);
+  rule(yellow, red, 0.1);
     canvas.clearRect(0, 0, 500, 500);
     draw(0, 0, "black", 500);
     for(i = 0; i < particles.length; i++){
